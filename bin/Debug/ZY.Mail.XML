@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ZY.Mail</name>
+    </assembly>
+    <members>
+        <member name="T:ZY.Mail.Mail">
+            <summary>
+            发送邮件
+            </summary>
+        </member>
+        <member name="M:ZY.Mail.Mail.#ctor">
+            <summary>
+            初始化 ZY.Mail 的空实例
+            默认读取程序运行目录的下的Config/MailSetting.config文件
+            </summary>
+        </member>
+        <member name="M:ZY.Mail.Mail.#ctor(System.String)">
+            <summary>
+            使用指定路径下的邮件配置信息文件
+            </summary>
+            <param name="path">包含邮件配置信息文件路径的 System.String。</param>
+        </member>
+        <member name="M:ZY.Mail.Mail.#ctor(ZY.Mail.MailConfig)">
+            <summary>
+            使用指定的 ZY.Mail.Config 类对象初始化 ZY.Mail 类的新实例。
+            </summary>
+            <param name="config">包含邮件配置信息的 ZY.Mail.Config。</param>
+        </member>
+        <member name="M:ZY.Mail.Mail.Send(System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="receiver">接收人邮箱</param>
+            <param name="body">邮件内容</param>
+        </member>
+        <member name="M:ZY.Mail.Mail.Send(System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="receiver">接收人邮箱</param>
+            <param name="receiverName">接收人姓名</param>
+            <param name="body">邮件内容</param>
+        </member>
+        <member name="M:ZY.Mail.Mail.Send(System.String,System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="receiver">接收人邮箱</param>
+            <param name="receiverName">接收人姓名</param>
+            <param name="subject">邮件主题</param>
+            <param name="body">邮件内容</param>
+        </member>
+        <member name="M:ZY.Mail.Mail.Send(ZY.Mail.MailInfo,System.Net.Mail.MailMessage)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="info">接收人信息 ZY.Mail.MailInfo </param>
+            <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
+        </member>
+        <member name="M:ZY.Mail.Mail.Send(ZY.Mail.MailInfo,System.Net.Mail.Attachment[])">
+            <summary>
+            发送邮件（带附件）
+            </summary>
+            <param name="info">接收人信息 ZY.Mail.MailInfo </param>
+            <param name="attachments">附件列表 System.Net.Mail.Attachment </param>
+        </member>
+        <member name="M:ZY.Mail.Mail.Send(ZY.Mail.MailInfo,System.String)">
+            <summary>
+            发送邮件（带附件）
+            </summary>
+            <param name="info">接收人信息 ZY.Mail.MailInfo </param>
+            <param name="filePath">附件路径 System.String </param>
+        </member>
+        <member name="T:ZY.Mail.MailConfig">
+            <summary>
+            邮件配置信息
+            </summary>
+        </member>
+        <member name="T:ZY.Mail.MailInfo">
+            <summary>
+            发送邮件的信息
+            </summary>
+        </member>
+    </members>
+</doc>

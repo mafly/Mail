@@ -1,0 +1,8 @@
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\bin\Debug\ZY.Mail.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\bin\Debug\ZY.Mail.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\obj\Debug\ZY.Mail.dll
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\obj\Debug\ZY.Mail.pdb
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\bin\Debug\ZY.Mail.XML
+C:\Users\Administrator\Documents\Visual Studio 2012\Projects\ZY\ZY.Mail\obj\Debug\ZY.Mail.csprojResolveAssemblyReference.cache
