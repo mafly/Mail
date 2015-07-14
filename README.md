@@ -81,13 +81,6 @@ via 源代码:
               }, new Attachment("../../Program.cs"), new Attachment("../../App.config"));
 ```
 
-命令行：
-
-```bash
-$ pinyin 中心
-zhōng xīn
-$ pinyin -h
-```
 
 ## API
 
