@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mafly.Mail", "Mafly.Mail.csproj", "{42B1E179-E926-4CF9-AC7E-87D90166608D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.Console", "Mail.Console\Mail.Console.csproj", "{1799BF99-31EF-4778-8EC7-92BCB83FA6EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42B1E179-E926-4CF9-AC7E-87D90166608D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B1E179-E926-4CF9-AC7E-87D90166608D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B1E179-E926-4CF9-AC7E-87D90166608D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B1E179-E926-4CF9-AC7E-87D90166608D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1799BF99-31EF-4778-8EC7-92BCB83FA6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1799BF99-31EF-4778-8EC7-92BCB83FA6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1799BF99-31EF-4778-8EC7-92BCB83FA6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1799BF99-31EF-4778-8EC7-92BCB83FA6EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

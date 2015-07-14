@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 
-namespace ZY.Mail
+namespace Mafly.Mail
 {
     /// <summary>
     /// 发送邮件
@@ -12,7 +12,7 @@ namespace ZY.Mail
         private static MailConfig mailConfig;
 
         /// <summary>
-        /// 初始化 ZY.Mail 的空实例
+        /// 初始化 Mafly.Mail 的空实例
         /// 默认读取程序运行目录的下的Config/MailSetting.config文件
         /// </summary>
         public Mail()
@@ -30,9 +30,9 @@ namespace ZY.Mail
         }
 
         /// <summary>
-        /// 使用指定的 ZY.Mail.Config 类对象初始化 ZY.Mail 类的新实例。
+        /// 使用指定的 Mafly.Mail.Config 类对象初始化 Mafly.Mail 类的新实例。
         /// </summary>
-        /// <param name="config">包含邮件配置信息的 ZY.Mail.Config。</param>
+        /// <param name="config">包含邮件配置信息的 Mafly.Mail.Config。</param>
         public Mail(MailConfig config)
         {
             mailConfig = config;
@@ -45,7 +45,7 @@ namespace ZY.Mail
         /// <param name="body">邮件内容</param>
         public void Send(string receiver, string body)
         {
-            Send(new MailInfo { Receiver = receiver, ReceiverName = receiver, Body = body, Subject = body.Substring(0, 10) });
+            Send(new MailInfo { Receiver = receiver, ReceiverName = receiver, Body = body, Subject = body });
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace ZY.Mail
         /// <param name="body">邮件内容</param>
         public void Send(string receiver, string receiverName, string body)
         {
-            Send(new MailInfo { Receiver = receiver, ReceiverName = receiverName, Body = body, Subject = body.Substring(0, 10) });
+            Send(new MailInfo { Receiver = receiver, ReceiverName = receiverName, Body = body, Subject = body });
         }
 
         /// <summary>
@@ -74,11 +74,11 @@ namespace ZY.Mail
         /// <summary>
         /// 发送邮件
         /// </summary>
-        /// <param name="info">接收人信息 ZY.Mail.MailInfo </param>
+        /// <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
         /// <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
         public void Send(MailInfo info, MailMessage message = null)
         {
-            SmtpClient sender = new SmtpClient();
+            var sender = new SmtpClient();
             message = message ?? new MailMessage();
             if (string.IsNullOrEmpty(info.ReceiverName))
                 info.ReceiverName = info.Receiver;
@@ -107,7 +107,7 @@ namespace ZY.Mail
             }
             catch
             {
-                message.From = new MailAddress("iNuGet@163.com", "NuGet");
+                message.From = new MailAddress("iNuGet@163.com", "NuGet_Mafly");
                 message.IsBodyHtml = true;
                 sender.Host = "smtp.163.com";
                 sender.Port = 25;
@@ -124,14 +124,14 @@ namespace ZY.Mail
         /// <summary>
         /// 发送邮件（带附件）
         /// </summary>
-        /// <param name="info">接收人信息 ZY.Mail.MailInfo </param>
+        /// <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
         /// <param name="attachments">附件列表 System.Net.Mail.Attachment </param>
         public void Send(MailInfo info, params Attachment[] attachments)
         {
             var message = new MailMessage();
-            foreach (var v in attachments)
+            foreach (var item in attachments)
             {
-                message.Attachments.Add(v);
+                message.Attachments.Add(item);
             }
             try
             {
@@ -146,7 +146,7 @@ namespace ZY.Mail
         /// <summary>
         /// 发送邮件（带附件）
         /// </summary>
-        /// <param name="info">接收人信息 ZY.Mail.MailInfo </param>
+        /// <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
         /// <param name="filePath">附件路径 System.String </param>
         public void Send(MailInfo info, string filePath)
         {
