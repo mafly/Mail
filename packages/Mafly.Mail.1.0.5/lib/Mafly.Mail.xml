@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mafly.Mail</name>
+    </assembly>
+    <members>
+        <member name="T:Mafly.Mail.Mail">
+            <summary>
+            发送邮件
+            </summary>
+        </member>
+        <member name="M:Mafly.Mail.Mail.#ctor">
+            <summary>
+            初始化 Mafly.Mail 的空实例
+            默认读取程序运行目录的下的Config/MailSetting.config文件
+            </summary>
+        </member>
+        <member name="M:Mafly.Mail.Mail.#ctor(System.String)">
+            <summary>
+            使用指定路径下的邮件配置信息文件
+            </summary>
+            <param name="path">包含邮件配置信息文件路径的 System.String。</param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.#ctor(Mafly.Mail.MailConfig)">
+            <summary>
+            使用指定的 Mafly.Mail.Config 类对象初始化 Mafly.Mail 类的新实例。
+            </summary>
+            <param name="config">包含邮件配置信息的 Mafly.Mail.Config。</param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="receiver">接收人邮箱</param>
+            <param name="body">邮件内容</param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="receiver">接收人邮箱</param>
+            <param name="receiverName">接收人姓名</param>
+            <param name="body">邮件内容</param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(System.String,System.String,System.String,System.String)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="receiver">接收人邮箱</param>
+            <param name="receiverName">接收人姓名</param>
+            <param name="subject">邮件主题</param>
+            <param name="body">邮件内容</param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.Net.Mail.MailMessage)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+            <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.Net.Mail.Attachment[])">
+            <summary>
+            发送邮件（带附件）
+            </summary>
+            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+            <param name="attachments">附件列表 System.Net.Mail.Attachment </param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.String)">
+            <summary>
+            发送邮件（带附件）
+            </summary>
+            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+            <param name="filePath">附件路径 System.String </param>
+        </member>
+        <member name="T:Mafly.Mail.MailConfig">
+            <summary>
+            邮件配置信息
+            </summary>
+        </member>
+        <member name="M:Mafly.Mail.MailConfig.Create">
+            <summary>
+            读取默认路径（Config/MailSetting.config）下的配置文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Mafly.Mail.MailConfig.Create(System.String)">
+            <summary>
+            读取改路径下的配置文件
+            </summary>
+            <param name="configPath">配置文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.Host">
+            <summary>
+            主机名 如：smtp.163.com
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.Port">
+            <summary>
+            端口号 如：25
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.User">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.IsHtml">
+            <summary>
+            是否包含Html代码
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.DisplayName">
+            <summary>
+            发送者显示名
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.From">
+            <summary>
+            来源
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailConfig.EnableSsl">
+            <summary>
+            是否启用SSL 默认：false 
+            如果启用 端口号要改为加密方式发送的
+            </summary>
+        </member>
+        <member name="T:Mafly.Mail.MailInfo">
+            <summary>
+                发送邮件的信息
+            </summary>
+        </member>
+        <member name="F:Mafly.Mail.MailInfo._subject">
+            <summary>
+            主题行
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailInfo.ReceiverName">
+            <summary>
+            接收者名字
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailInfo.Receiver">
+            <summary>
+            接收者邮箱（多个用英文“,”号分割）
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailInfo.Subject">
+            <summary>
+            邮件的主题行
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailInfo.Body">
+            <summary>
+            正文内容
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailInfo.CC">
+            <summary>
+            抄送人集合
+            </summary>
+        </member>
+        <member name="P:Mafly.Mail.MailInfo.Replay">
+            <summary>
+            回复地址
+            </summary>
+        </member>
+    </members>
+</doc>

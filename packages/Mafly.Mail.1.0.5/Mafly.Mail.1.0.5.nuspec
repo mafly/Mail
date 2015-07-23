@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Mafly.Mail</id>
+    <version>1.0.5</version>
+    <title>Mafly.Mail</title>
+    <authors>Mafly</authors>
+    <owners>Mafly</owners>
+    <licenseUrl>https://github.com/mafly/Mail/blob/master/README.md</licenseUrl>
+    <projectUrl>https://github.com/mafly/Mail</projectUrl>
+    <iconUrl>http://mayongfa.cn/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>基于Net.Mail封装的发邮件库.
+github地址:https://github.com/mafly/Mail
+安装命令：Install-Package Mafly.Mail</description>
+    <summary>基于Net.Mail封装的发邮件库.
+只需一行代码就搞定邮件发送</summary>
+    <copyright>© Mafly . All rights reserved.</copyright>
+    <tags>Mail</tags>
+  </metadata>
+</package>
