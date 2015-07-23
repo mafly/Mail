@@ -12,40 +12,40 @@ namespace Mail.Console
             //参数：接收者邮箱、内容
             mailService.Send("mafly@obo2o.cn", "测试邮件发送！");
 
-            //参数：接收者邮箱、接收者名字、内容
-            mailService.Send("mafly@obo2o.cn", "mafly", "测试邮件发送！");
+            ////参数：接收者邮箱、接收者名字、内容
+            //mailService.Send("mafly@obo2o.cn", "mafly", "测试邮件发送！");
 
-            //参数：接收者邮箱、接收者名字、邮件主题、内容
-            mailService.Send("mafly@obo2o.cn", "mafly", "邮件发送", "测试邮件发送！");
+            ////参数：接收者邮箱、接收者名字、邮件主题、内容
+            //mailService.Send("mafly@obo2o.cn", "mafly", "邮件发送", "测试邮件发送！");
 
-            //使用MailInfo对象模式  参数：接收者邮箱、接收者名字、邮件主题、内容
-            mailService.Send(new MailInfo
-            {
-                Receiver = "mafly@obo2o.cn",
-                ReceiverName = "mafly",
-                Subject = "邮件发送",
-                Body = "测试邮件发送！"
-            });
+            ////使用MailInfo对象模式  参数：接收者邮箱、接收者名字、邮件主题、内容
+            //mailService.Send(new MailInfo
+            //{
+            //    Receiver = "mafly@obo2o.cn",
+            //    ReceiverName = "mafly",
+            //    Subject = "邮件发送",
+            //    Body = "测试邮件发送！"
+            //});
 
-            //使用MailInfo对象模式  参数：接收者邮箱、接收者名字、邮件主题、内容、附件路径
-            mailService.Send(
-                new MailInfo
-                {
-                    Receiver = "mafly@obo2o.cn",
-                    ReceiverName = "mafly",
-                    Subject = "带附件邮件发送",
-                    Body = "测试带附件邮件发送！"
-                }, "../../Program.cs");
+            ////使用MailInfo对象模式  参数：接收者邮箱、接收者名字、邮件主题、内容、附件路径
+            //mailService.Send(
+            //    new MailInfo
+            //    {
+            //        Receiver = "mafly@obo2o.cn",
+            //        ReceiverName = "mafly",
+            //        Subject = "带附件邮件发送",
+            //        Body = "测试带附件邮件发送！"
+            //    }, "../../Program.cs");
 
-            //使用MailInfo对象模式  参数：接收者邮箱、接收者名字、邮件主题、内容、多附件路径
-            mailService.Send(
-                new MailInfo
-                {
-                    Receiver = "mafly@obo2o.cn",
-                    ReceiverName = "mafly",
-                    Subject = "带附件邮件发送",
-                    Body = "测试带附件邮件发送！"
-                }, new Attachment("../../Program.cs"), new Attachment("../../App.config"));
+            ////使用MailInfo对象模式  参数：接收者邮箱、接收者名字、邮件主题、内容、多附件路径
+            //mailService.Send(
+            //    new MailInfo
+            //    {
+            //        Receiver = "mafly@obo2o.cn",
+            //        ReceiverName = "mafly",
+            //        Subject = "带附件邮件发送",
+            //        Body = "测试带附件邮件发送！"
+            //    }, new Attachment("../../Program.cs"), new Attachment("../../App.config"));
 
             System.Console.ReadKey();
         }

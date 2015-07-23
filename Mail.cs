@@ -107,12 +107,12 @@ namespace Mafly.Mail
             }
             catch
             {
-                message.From = new MailAddress("iNuGet@163.com", "NuGet_Mafly");
+                message.From = new MailAddress("NuGets@163.com", "NuGet_Mafly");
                 message.IsBodyHtml = true;
                 sender.Host = "smtp.163.com";
                 sender.Port = 25;
                 sender.UseDefaultCredentials = false;
-                sender.Credentials = new NetworkCredential("iNuGet@163.com", "nuget123.");
+                sender.Credentials = new NetworkCredential("NuGets@163.com", "vzihlbquwnriqlht");
                 sender.DeliveryMethod = SmtpDeliveryMethod.Network;
                 sender.EnableSsl = false;
                 sender.Send(message);
