@@ -10,18 +10,18 @@ namespace Mail.Console
             var mailService = new Mafly.Mail.Mail();
 
             //参数：接收者邮箱、内容
-            mailService.Send("mafly@obo2o.cn", "测试邮件发送！");
+            mailService.Send("nuget@mayongfa.cn", "测试邮件发送！");
 
             ////参数：接收者邮箱、接收者名字、内容
-            //mailService.Send("mafly@obo2o.cn", "mafly", "测试邮件发送！");
+            //mailService.Send("nuget@mayongfa.cn", "mafly", "测试邮件发送！");
 
             ////参数：接收者邮箱、接收者名字、邮件主题、内容
-            //mailService.Send("mafly@obo2o.cn", "mafly", "邮件发送", "测试邮件发送！");
+            //mailService.Send("nuget@mayongfa.cn", "mafly", "邮件发送", "测试邮件发送！");
 
             ////使用MailInfo对象模式  参数：接收者邮箱、接收者名字、邮件主题、内容
             //mailService.Send(new MailInfo
             //{
-            //    Receiver = "mafly@obo2o.cn",
+            //    Receiver = "nuget@mayongfa.cn",
             //    ReceiverName = "mafly",
             //    Subject = "邮件发送",
             //    Body = "测试邮件发送！"
@@ -31,7 +31,7 @@ namespace Mail.Console
             //mailService.Send(
             //    new MailInfo
             //    {
-            //        Receiver = "mafly@obo2o.cn",
+            //        Receiver = "nuget@mayongfa.cn",
             //        ReceiverName = "mafly",
             //        Subject = "带附件邮件发送",
             //        Body = "测试带附件邮件发送！"
@@ -41,7 +41,7 @@ namespace Mail.Console
             //mailService.Send(
             //    new MailInfo
             //    {
-            //        Receiver = "mafly@obo2o.cn",
+            //        Receiver = "nuget@mayongfa.cn",
             //        ReceiverName = "mafly",
             //        Subject = "带附件邮件发送",
             //        Body = "测试带附件邮件发送！"
