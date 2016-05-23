@@ -92,7 +92,7 @@ namespace Mafly.Mail
                 message.ReplyToList.Add(new MailAddress(info.Replay));
             message.Body = info.Body;
             if (!string.IsNullOrEmpty(info.CC))
-                message.CC.Add(new MailAddress(info.CC));
+                message.CC.Add(info.CC);
             try
             {
                 message.IsBodyHtml = mailConfig.IsHtml;
