@@ -9,6 +9,15 @@
             发送邮件
             </summary>
         </member>
+        <member name="M:Mafly.Mail.MailBase.Send(Mafly.Mail.MailInfo,Mafly.Mail.MailConfig,System.Net.Mail.MailMessage,System.Boolean)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+            <param name="mailConfig">发件邮箱配置</param>
+            <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
+            <param name="isSingleSend">是否群发单显。当邮件接收人为多个时，可选择该模式，即可对多个收件人分别发送，收件方不会知道这封邮件有多个收件人</param>
+        </member>
         <member name="M:Mafly.Mail.Mail.#ctor">
             <summary>
             初始化 Mafly.Mail 的空实例
@@ -34,6 +43,14 @@
             <param name="receiver">接收人邮箱</param>
             <param name="body">邮件内容</param>
         </member>
+        <member name="M:Mafly.Mail.Mail.Send(System.String,System.String,System.Boolean)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="receiver">接收人邮箱</param>
+            <param name="body">邮件内容</param>
+            <param name="isSingleSend">是否群发单显</param>
+        </member>
         <member name="M:Mafly.Mail.Mail.Send(System.String,System.String,System.String)">
             <summary>
             发送邮件
@@ -51,12 +68,14 @@
             <param name="subject">邮件主题</param>
             <param name="body">邮件内容</param>
         </member>
-        <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.Net.Mail.MailMessage)">
+        <member name="M:Mafly.Mail.Mail.Send(System.String,System.String,System.String,System.Boolean)">
             <summary>
             发送邮件
             </summary>
-            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
-            <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
+            <param name="receiver">接收人邮箱</param>
+            <param name="subject">邮件主题</param>
+            <param name="body">邮件内容</param>
+            <param name="isSingleSend">是否群发单显</param>
         </member>
         <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.Net.Mail.Attachment[])">
             <summary>
@@ -71,6 +90,29 @@
             </summary>
             <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
             <param name="filePath">附件路径 System.String </param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.String,System.Boolean)">
+            <summary>
+            发送邮件（带附件）
+            </summary>
+            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+            <param name="filePath">附件路径 System.String </param>
+            <param name="isSingleSend">是否群发单显</param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.Net.Mail.MailMessage)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+            <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
+        </member>
+        <member name="M:Mafly.Mail.Mail.Send(Mafly.Mail.MailInfo,System.Boolean,System.Net.Mail.MailMessage)">
+            <summary>
+            发送邮件
+            </summary>
+            <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+            <param name="isSingleSend">是否群发单显</param>
+            <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
         </member>
         <member name="T:Mafly.Mail.MailConfig">
             <summary>

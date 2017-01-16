@@ -7,7 +7,7 @@ namespace Mafly.Mail
     /// <summary>
     /// 发送邮件
     /// </summary>
-    public class Mail
+    public class Mail : MailBase
     {
         private static MailConfig mailConfig;
 
@@ -52,6 +52,17 @@ namespace Mafly.Mail
         /// 发送邮件
         /// </summary>
         /// <param name="receiver">接收人邮箱</param>
+        /// <param name="body">邮件内容</param>
+        /// <param name="isSingleSend">是否群发单显</param>
+        public void Send(string receiver, string body, bool isSingleSend)
+        {
+            Send(new MailInfo { Receiver = receiver, Body = body, Subject = body }, isSingleSend);
+        }
+
+        /// <summary>
+        /// 发送邮件
+        /// </summary>
+        /// <param name="receiver">接收人邮箱</param>
         /// <param name="receiverName">接收人姓名</param>
         /// <param name="body">邮件内容</param>
         public void Send(string receiver, string receiverName, string body)
@@ -74,51 +85,13 @@ namespace Mafly.Mail
         /// <summary>
         /// 发送邮件
         /// </summary>
-        /// <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
-        /// <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
-        public void Send(MailInfo info, MailMessage message = null)
+        /// <param name="receiver">接收人邮箱</param>
+        /// <param name="subject">邮件主题</param>
+        /// <param name="body">邮件内容</param>
+        /// <param name="isSingleSend">是否群发单显</param>
+        public void Send(string receiver, string subject, string body, bool isSingleSend)
         {
-            var sender = new SmtpClient();
-            message = message ?? new MailMessage();
-            if (string.IsNullOrEmpty(info.ReceiverName))
-                info.ReceiverName = info.Receiver;
-            if (info.Receiver.Contains(","))
-                message.To.Add(info.Receiver);
-            else
-                message.To.Add(new MailAddress(info.Receiver, info.ReceiverName));
-
-            message.Subject = info.Subject;
-            if (!string.IsNullOrEmpty(info.Replay))
-                message.ReplyToList.Add(new MailAddress(info.Replay));
-            message.Body = info.Body;
-            if (!string.IsNullOrEmpty(info.CC))
-                message.CC.Add(info.CC);
-            try
-            {
-                message.IsBodyHtml = mailConfig.IsHtml;
-                message.From = new MailAddress(mailConfig.From, mailConfig.DisplayName);
-                sender.Host = mailConfig.Host;
-                sender.Port = mailConfig.Port;
-                sender.UseDefaultCredentials = false;
-                sender.Credentials = new NetworkCredential(mailConfig.User, mailConfig.Password);
-                sender.DeliveryMethod = SmtpDeliveryMethod.Network;
-                sender.EnableSsl = mailConfig.EnableSsl;
-                sender.Send(message);
-            }
-            catch
-            {
-                message.From = new MailAddress("NuGets@163.com", "NuGet_Mafly");
-                message.IsBodyHtml = true;
-                sender.Host = "smtp.163.com";
-                sender.Port = 25;
-                sender.UseDefaultCredentials = false;
-                sender.Credentials = new NetworkCredential("NuGets@163.com", "vzihlbquwnriqlht");
-                sender.DeliveryMethod = SmtpDeliveryMethod.Network;
-                sender.EnableSsl = false;
-                sender.Send(message);
-                //throw new Team.Common.Exceptions.EmailConfigurationException { Status = Team.Common.Enums.EmailConfiguration.ConfigurationError };
-            }
-            // sender.Send(message);
+            Send(new MailInfo { Receiver = receiver, Body = body, Subject = subject }, isSingleSend);
         }
 
         /// <summary>
@@ -153,6 +126,40 @@ namespace Mafly.Mail
             var message = new MailMessage();
             message.Attachments.Add(new Attachment(filePath));
             Send(info, message);
+        }
+
+        /// <summary>
+        /// 发送邮件（带附件）
+        /// </summary>
+        /// <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+        /// <param name="filePath">附件路径 System.String </param>
+        /// <param name="isSingleSend">是否群发单显</param>
+        public void Send(MailInfo info, string filePath, bool isSingleSend)
+        {
+            var message = new MailMessage();
+            message.Attachments.Add(new Attachment(filePath));
+            Send(info, isSingleSend, message);
+        }
+
+        /// <summary>
+        /// 发送邮件
+        /// </summary>
+        /// <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+        /// <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
+        public void Send(MailInfo info, MailMessage message = null)
+        {
+            base.Send(info, mailConfig, message);
+        }
+
+        /// <summary>
+        /// 发送邮件
+        /// </summary>
+        /// <param name="info">接收人信息 Mafly.Mail.MailInfo </param>
+        /// <param name="isSingleSend">是否群发单显</param>
+        /// <param name="message">默认为null。 System.Net.Mail.MailMessage </param>
+        public void Send(MailInfo info, bool isSingleSend, MailMessage message = null)
+        {
+            base.Send(info, mailConfig, message, isSingleSend);
         }
     }
 }

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Mafly.Mail</id>
-    <version>1.0.5</version>
+    <version>2.1.1</version>
     <title>Mafly.Mail</title>
     <authors>Mafly</authors>
     <owners>Mafly</owners>
@@ -13,8 +13,14 @@
     <description>基于Net.Mail封装的发邮件库.
 github地址:https://github.com/mafly/Mail
 安装命令：Install-Package Mafly.Mail</description>
-    <summary>基于Net.Mail封装的发邮件库.
-只需一行代码就搞定邮件发送</summary>
+    <summary>基于 Net.Mail 封装的发邮件库。
+只需一行代码就搞定邮件发送
+支持自定义邮件发出邮箱、发出方名字等。
+支持SSL加密发送。
+多个接收人、抄送人。
+支持群发单显模式。
+支持添加附件、多个附件。
+目前大部分主流邮箱全支持。</summary>
     <copyright>© Mafly . All rights reserved.</copyright>
     <tags>Mail</tags>
   </metadata>
