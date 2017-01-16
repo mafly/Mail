@@ -12,6 +12,7 @@
 * 支持自定义邮件发出邮箱、发出方名字等。
 * 支持SSL加密发送。
 * 多个接收人、抄送人。
+* 支持群发独显模式（适用于推广、会员群发等）。
 * 支持添加附件、多个附件。
 * 目前大部分主流邮箱全支持。
 
@@ -44,6 +45,9 @@ via 源代码:
 
           //参数：接收者邮箱、内容
           mailService.Send("nuget@mayongfa.cn", "测试邮件发送！");
+		  
+		  //群发单显参数：多接收者邮箱、内容
+          mailService.Send("kanwolian@gmail.com,546601728@qq.com", "测试【群发单显】邮件发送！", true);
 
           //参数：接收者邮箱、接收者名字、内容
           mailService.Send("nuget@mayongfa.cn", "mafly", "测试邮件发送！");
