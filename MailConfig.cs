@@ -101,5 +101,4 @@ namespace Mafly.Mail
         [JsonProperty]
         public bool EnableSsl { get; set; }
     }
-
 }

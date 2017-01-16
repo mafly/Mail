@@ -50,5 +50,6 @@
         /// 回复地址
         /// </summary>
         public string Replay { get; set; }
+
     }
 }
