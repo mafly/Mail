@@ -13,7 +13,7 @@ namespace Mail.Console
             mailService.Send("kanwolian@gmail.com,546601728@qq.com", "测试【群发单显】邮件发送！", true);
 
             //参数：接收者邮箱、内容
-            mailService.Send("kanwolian@gmail.com,546601728@qq.com", "测试邮件发送！");
+            //mailService.Send("kanwolian@gmail.com,546601728@qq.com", "测试邮件发送！");
 
             ////参数：接收者邮箱、接收者名字、内容
             //mailService.Send("nuget@mayongfa.cn", "mafly", "测试邮件发送！");
