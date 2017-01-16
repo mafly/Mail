@@ -49,6 +49,11 @@ namespace Mafly.Mail
             SmtpClientSend(mailConfig, message);
         }
 
+        /// <summary>
+        /// SmtpClientSend
+        /// </summary>
+        /// <param name="mailConfig"></param>
+        /// <param name="message"></param>
         private void SmtpClientSend(MailConfig mailConfig, MailMessage message)
         {
             var sender = new SmtpClient();
